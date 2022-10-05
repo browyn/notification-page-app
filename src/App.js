@@ -7,9 +7,11 @@ function App() {
 
   return (
     <div className="App">
-      <CardLayout>
-        <Notification />
-      </CardLayout>
+      <main>
+        <CardLayout>
+          <Notification />
+        </CardLayout>
+      </main>
     </div>
   );
 };
