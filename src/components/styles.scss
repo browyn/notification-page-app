@@ -37,7 +37,7 @@
                 font-size: 15px;
                 color: $white;
                 background: $blue;
-                padding: 4px 12px;
+                padding: 2px 12px;
                 border-radius: 8px;
             }
         }
@@ -71,6 +71,13 @@
             background: $white;
             width: 100%;
             border-radius: 12px;
+            cursor: pointer;
+            transition: all ease-in-out 0.3s;
+
+            &:hover {
+                background: $lightGrayishBlue2;
+                transition: all ease-in-out 0.3s;
+            }
 
             .notification-text {
                 display: flex;
@@ -86,19 +93,38 @@
                     margin-left: 8px;
                 }
 
+
+                .link {
+                    color: $blue;
+                    cursor: pointer;
+                }
+
+                .extra {
+                    cursor: pointer;
+                    transition: all ease-in-out 0.3s;
+
+                    &:hover {
+                        color: $blue;
+                        transition: all ease-in-out 0.3s;
+                    }
+                }
+
                 .name {
                     color: $veryDarkBlue;
+                    cursor: pointer;
                 }
 
                 .notification-message {
                     padding: 12px;
                     border-radius: 8px;
                     border: 1px solid $lightGrayishBlue1;
+                    cursor: pointer;
                 }
             }
 
             .notification-left-image img {
                 width: 40px;
+                cursor: pointer;
             }
 
             .notification-right-image {

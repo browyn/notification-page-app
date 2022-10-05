@@ -1,6 +1,6 @@
 import React from "react";
 
-import { CardLayout, Notification } from "./components";
+import { CardLayout } from "./components";
 import './App.scss';
 
 function App() {
@@ -8,9 +8,7 @@ function App() {
   return (
     <main>
       <div className="App">
-        <CardLayout>
-          <Notification />
-        </CardLayout>
+        <CardLayout />
       </div>
     </main >
   );

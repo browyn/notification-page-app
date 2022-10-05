@@ -10,7 +10,6 @@ import anna from "../assets/images/avatar-anna-kim.webp";
 import chess from "../assets/images/image-chess.webp";
 
 const Notification = ({ read }) => {
-
     const notifications = [
         {
             name: 'Mark Webber',
@@ -18,14 +17,17 @@ const Notification = ({ read }) => {
             action: 'reacted to your recent post',
             time: '1m ago',
             extra: 'My first tournament today!',
-            status: 'un-read'
+            status: 'un-read',
+            rightImage: null,
         },
         {
             name: 'Angela Gray',
             profileImg: angela,
             action: 'followed you',
             time: '5m ago',
-            status: 'un-read'
+            extra: null,
+            status: 'un-read',
+            rightImage: null,
         },
         {
             name: 'Jacob Thompson',
@@ -33,7 +35,9 @@ const Notification = ({ read }) => {
             action: 'has joined your group',
             time: '1 day ago',
             link: 'Chess Club',
-            status: 'un-read'
+            extra: null,
+            status: 'un-read',
+            rightImage: null,
 
         },
         {
@@ -41,13 +45,18 @@ const Notification = ({ read }) => {
             profileImg: rizky,
             action: 'sent you a private message',
             time: '5 days ago',
-            message: `Hello, thanks for setting up the Chess Club. I've been a member for weeks now and I'm already having lots of fun and improving my game.`
+            message: `Hello, thanks for setting up the Chess Club. I've been a member for weeks now and I'm already having lots of fun and improving my game.`,
+            extra: null,
+            status: null,
+            rightImage: null,
         },
         {
             name: 'Kimberly Smith',
             profileImg: kimberly,
             action: 'commented on your picture',
             time: '1 week ago',
+            extra: null,
+            status: null,
             rightImage: chess,
         },
         {
@@ -55,14 +64,19 @@ const Notification = ({ read }) => {
             profileImg: nathan,
             action: 'reacted to your recentt post',
             time: '2 weeks ago',
-            extra: '5 end-game startegies to increase your win rate'
+            extra: '5 end-game startegies to increase your win rate',
+            status: null,
+            rightImage: null,
         },
         {
             name: 'Anna Kim',
             profileImg: anna,
             action: 'left the group',
             time: '2 weeks ago',
-            link: 'Chess Club'
+            link: 'Chess Club',
+            extra: null,
+            status: null,
+            rightImage: null,
         },
     ];
 
@@ -72,42 +86,47 @@ const Notification = ({ read }) => {
                 <div className="notification-content">
                     {/* Single notification */}
 
-                    {notifications.map((notification) => (
-                        <div className={`notification ${notification.status && read === true ? "un-read" : null}`} key={`notification-${notification.name}`}>
-                            <div className="notification-left-image">
-                                <img src={notification.profileImg} alt={notification.name} />
-                            </div>
-                            <div className="notification-text">
-                                <p>
-                                    <b className="name">{notification.name} </b>
-                                    {notification.action}
+                    {
+                        notifications.map((notification) => (
 
-                                    {notification.extra && <b> {notification.extra}</b>}
+                            <div className={`notification ${notification.status && read === false ? "un-read" : null}`} key={`notification-${notification.name}`}>
+                                <div className="notification-left-image">
+                                    <img src={notification.profileImg} alt={notification.name} />
+                                </div>
+                                <div className="notification-text">
+                                    <p><b className="name">{notification.name} </b>
+                                        {notification.action}
 
-                                    {notification.link && <b style={{ color: "hsl(219, 85%, 26%)" }}> {notification.link}</b>}
-                                    {notification.status
+                                        {notification.extra && <b className="extra"> {notification.extra}</b>}
+
+                                        {notification.link && <b className="link"> {notification.link}</b>}
+                                        {notification.status
+                                            &&
+                                            read
+                                            &&
+                                            <span className="notification-icon"></span>
+                                        }
+                                        <br />
+                                        {notification.time}
+                                    </p>
+                                    {
+                                        notification.message
                                         &&
-                                        read
-                                        &&
-                                        <span className="notification-icon"></span>
+                                        <div className="notification-message">
+                                            {notification.message}
+                                        </div>
                                     }
-                                    <br />
-                                    {notification.time}
-                                </p>
+                                </div>
                                 {
-                                    notification.message &&
-                                    <div className="notification-message">
-                                        {notification.message}
+                                    notification.rightImage
+                                    &&
+                                    <div className="notification-right-image">
+                                        <img src={notification.rightImage} alt={notification.name} />
                                     </div>
                                 }
                             </div>
-                            {notification.rightImage &&
-                                <div className="notification-right-image">
-                                    <img src={notification.rightImage} alt={notification.name} />
-                                </div>
-                            }
-                        </div>
-                    ))}
+
+                        ))}
                     {/* Single notification */}
                 </div>
             </div>
