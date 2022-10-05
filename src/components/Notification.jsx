@@ -102,7 +102,7 @@ const Notification = ({ read }) => {
                                         {notification.link && <b className="link"> {notification.link}</b>}
                                         {notification.status
                                             &&
-                                            read
+                                            read === false
                                             &&
                                             <span className="notification-icon"></span>
                                         }
