@@ -9,9 +9,13 @@
 }
 
 body {
-    font-size: 13px;
+    font-size: 16px;
     font-family: 'Plus Jakarta Sans', sans-serif;
     background: $veryLightGrayishBlue;
     color: $darkGrayishBlue;
     line-height: 20px;
+
+    @media only screen and (max-width: 575px) {
+        font-size: 15px;
+    }
 }
