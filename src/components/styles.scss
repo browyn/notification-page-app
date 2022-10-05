@@ -8,10 +8,11 @@
     margin: auto;
     padding: 24px 32px;
     border-radius: 15px;
-    box-shadow: 2px 5px 20px 4px $lightGrayishBlue1;
+    box-shadow: 2px 5px 20px 4px $lightGrayishBlue2;
     display: flex;
     flex-direction: column;
     gap: 24px;
+    background: $white;
 
     @media only screen and (max-width: 575px) {
         width: 100%;
