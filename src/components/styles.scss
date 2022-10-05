@@ -1,0 +1,117 @@
+@import "../sass/variables";
+@import "../sass/mixins";
+
+.card-component {
+    width: 600px;
+    max-width: 600px;
+    height: 700px;
+    margin: auto;
+    padding: 24px 32px;
+    border-radius: 15px;
+    box-shadow: 2px 5px 20px 4px $lightGrayishBlue1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @media only screen and (max-width: 575px) {
+        width: 100%;
+        height: 100vh;
+        overflow: auto;
+        padding: 24px 12px;
+    }
+
+    .card-header {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+
+        h1 {
+            font-size: 22px;
+            color: $veryDarkBlue;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            span {
+                font-size: 15px;
+                color: $white;
+                background: $blue;
+                padding: 4px 12px;
+                border-radius: 8px;
+            }
+        }
+
+        span {
+            font-size: 13px;
+            cursor: pointer;
+        }
+    }
+
+    .card-content {
+        display: flex;
+        flex-direction: row;
+        gap: 8px
+    }
+}
+
+.notification-container {
+    width: 100%;
+
+    .notification-content {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .notification {
+            padding: 12px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            background: $white;
+            width: 100%;
+            border-radius: 12px;
+
+            .notification-text {
+                display: flex;
+                gap: 8px;
+                flex-direction: column;
+
+                .notification-icon {
+                    width: 8px;
+                    height: 8px;
+                    display: inline-block;
+                    background: $red;
+                    border-radius: 50%;
+                    margin-left: 8px;
+                }
+
+                .name {
+                    color: $veryDarkBlue;
+                }
+
+                .notification-message {
+                    padding: 12px;
+                    border-radius: 8px;
+                    border: 1px solid $lightGrayishBlue1;
+                }
+            }
+
+            .notification-left-image img {
+                width: 40px;
+            }
+
+            .notification-right-image {
+                margin-left: auto;
+
+                img {
+                    width: 40px;
+                }
+            }
+        }
+
+        .un-read {
+            background: hsl(211, 68%, 97.5%);
+        }
+    }
+}
