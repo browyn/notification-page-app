@@ -6,13 +6,13 @@ import './App.scss';
 function App() {
 
   return (
-    <div className="App">
-      <main>
+    <main>
+      <div className="App">
         <CardLayout>
           <Notification />
         </CardLayout>
-      </main>
-    </div>
+      </div>
+    </main >
   );
 };
 
