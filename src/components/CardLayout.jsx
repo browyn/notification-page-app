@@ -1,17 +1,17 @@
 import React from "react";
 
-import Notification from "./Notification";
 import "./styles.scss";
 
-const CardLayout = () => {
 
-    const [read, setRead] = React.useState(false);
+const CardLayout = ({ read, setRead, children }) => {
+
     const mark = (e) => {
         e.preventDefault();
         setRead(!read);
         console.log('Marked all as read');
         setRead(null);
     };
+
     return (
         <>
             <div className="card-component">
@@ -21,7 +21,7 @@ const CardLayout = () => {
                     <span onClick={mark}>Mark all as read</span>
                 </div>
                 <div className="card-content">
-                    <Notification read={read} />
+                    {children}
                 </div>
             </div>
         </>
